@@ -1,0 +1,6 @@
+INVALID_INPUT = "invalid input, please check and try again"
+MINUTES_ERROR = "invalid minutes"
+HOURS_ERROR = "invalid hours"
+DAY_OF_WEEK_ERROR = "invalid day of week"
+DAY_OF_MONTH_ERROR = "invalid day of month"
+MONTH_ERROR = "invalid month"
