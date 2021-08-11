@@ -22,19 +22,25 @@ def input_validation(input):
 
     minutes = minutes_validation(parsed_input[0])
     hours = hours_validation(parsed_input[1])
-    day_of_month = day_of_month_validation(parsed_input[2])
+    days_of_month = day_of_month_validation(parsed_input[2])
     month = month_validation(parsed_input[3])
-    day_of_week = day_of_week_validation(parsed_input[4])
+    days_of_week = day_of_week_validation(parsed_input[4])
     command = parsed_input[5]
+
+    minutes = ' '.join(process_minutes(minutes)) if isinstance(process_minutes(minutes), list) else minutes
+    hours = ' '.join(process_hours(hours)) if isinstance(process_hours(hours), list) else hours
+    days_of_month = ' '.join(process_days_of_month(days_of_month)) if isinstance(process_days_of_month(days_of_month), list) else days_of_month
+    month = ' '.join(process_months(month)) if isinstance(process_months(month), list) else month
+    days_of_week = ' '.join(process_days_of_week(days_of_week)) if isinstance(process_days_of_week(days_of_week), list) else days_of_week
 
     # this should be working with the f-string formatting, but isn't for some reason
     print(
-        f"minute         {' '.join(process_minutes(minutes))}\n"
-        f"hour           {' '.join(process_hours(hours)):5}\n"
-        f"day of month   {' '.join(process_days_of_month(day_of_month)):5}\n"
-        f"month          {' '.join(process_months(month)):5}\n"
-        f"day of week    {' '.join(process_days_of_week(day_of_week)):5}\n"
-        f"command        {command:5}"
+        f"minute        {minutes:5}\n"
+        f"hour          {hours:5}\n"
+        f"day of month  {days_of_month:5}\n"
+        f"month         {month:5}\n"
+        f"day of week   {days_of_week:5}\n"
+        f"command       {command:5}"
     )
 
 
